@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name = "tab_operatori")
 public class Operatore extends Persona{
 
-//    @Column(name = "anni_di_servizio")
+    @Column(name = "anni_di_servizio")
     private Integer anniDiServizio;
 
     public Integer getAnniDiServizio() {
