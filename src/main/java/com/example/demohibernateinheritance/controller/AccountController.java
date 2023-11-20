@@ -5,26 +5,34 @@ import com.example.demohibernateinheritance.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/account")
+@RestController("/api/v1/account")
 public class AccountController {
 
     @Autowired
-    AccountService accountService;
+    private AccountService accountService;
 
-    @PostMapping("/add")
-    public ResponseEntity addAccount(Account account) {
+    @RequestMapping(value = "/getAllAccounts", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity<?> getAllAccounts() throws Exception {
         try {
-            accountService.add(account);
-            return new ResponseEntity("SUCCESS", HttpStatus.OK);
+            accountService.getAllAccounts();
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity("ERROR: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+    }
 
-
+    @RequestMapping(value = "/addAccount", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity<?> addAccount(@RequestBody Account account) throws Exception {
+        try {
+            accountService.addAccount(account);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 }

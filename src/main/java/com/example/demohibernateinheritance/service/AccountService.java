@@ -5,17 +5,28 @@ import com.example.demohibernateinheritance.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountService {
 
     @Autowired
-    AccountRepository accountRepository;
+    private AccountRepository accountRepository;
 
-    public void add(Account account) throws Exception {
+    public List<Account> getAllAccounts() throws Exception {
+        try {
+            return accountRepository.findAll();
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public Boolean addAccount(Account account) {
         try {
             accountRepository.save(account);
-        } catch (Exception e) {
-            throw new Exception("Errore salvataggio account");
+            return true;
+        }catch (Exception e){
+            return false;
         }
     }
 }
