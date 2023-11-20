@@ -1,5 +1,7 @@
 package com.example.demohibernateinheritance.domain;
 
+import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import jakarta.persistence.*;
 
 @Entity
@@ -55,4 +57,6 @@ public abstract class Persona {
     public void setSesso(String sesso) {
         this.sesso = sesso;
     }
+
+    public abstract AccountDiPersonaDTO getDTOofPersona();
 }

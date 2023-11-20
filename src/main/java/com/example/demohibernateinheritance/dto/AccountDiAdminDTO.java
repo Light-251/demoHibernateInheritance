@@ -1,7 +1,6 @@
 package com.example.demohibernateinheritance.dto;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.example.demohibernateinheritance.domain.Admin;
 
 public class AccountDiAdminDTO extends AccountDiPersonaDTO {
 
@@ -21,4 +20,5 @@ public class AccountDiAdminDTO extends AccountDiPersonaDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

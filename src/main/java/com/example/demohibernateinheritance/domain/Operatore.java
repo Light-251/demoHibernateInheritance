@@ -1,5 +1,7 @@
 package com.example.demohibernateinheritance.domain;
 
+import com.example.demohibernateinheritance.dto.AccountDiOperatoreDTO;
+import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -19,5 +21,18 @@ public class Operatore extends Persona{
 
     public void setAnniDiServizio(Integer anniDiServizio) {
         this.anniDiServizio = anniDiServizio;
+    }
+
+    @Override
+    public AccountDiOperatoreDTO getDTOofPersona() {
+
+        AccountDiOperatoreDTO accountDiOperatoreDTO = new AccountDiOperatoreDTO();
+
+        accountDiOperatoreDTO.setNome(this.getNome());
+        accountDiOperatoreDTO.setCognome(this.getCognome());
+        accountDiOperatoreDTO.setSesso(this.getSesso());
+        accountDiOperatoreDTO.setAnniDiServizio(this.getAnniDiServizio());
+
+        return accountDiOperatoreDTO;
     }
 }

@@ -1,11 +1,15 @@
 package com.example.demohibernateinheritance.dto;
 
-import com.example.demohibernateinheritance.domain.Account;
-import com.example.demohibernateinheritance.domain.Operatore;
-
-public class AccountDiOperatoreDTO extends AccountDiPersonaDTO {
+public class AccountDiMedicoDTO extends AccountDiPersonaDTO{
 
     private Integer anniDiServizio;
+
+    public AccountDiMedicoDTO() {
+    }
+
+    public AccountDiMedicoDTO(Integer anniDiServizio) {
+        this.anniDiServizio = anniDiServizio;
+    }
 
     public Integer getAnniDiServizio() {
         return anniDiServizio;
@@ -14,5 +18,4 @@ public class AccountDiOperatoreDTO extends AccountDiPersonaDTO {
     public void setAnniDiServizio(Integer anniDiServizio) {
         this.anniDiServizio = anniDiServizio;
     }
-
 }

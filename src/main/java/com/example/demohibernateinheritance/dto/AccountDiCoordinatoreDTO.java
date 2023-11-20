@@ -1,7 +1,6 @@
 package com.example.demohibernateinheritance.dto;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.example.demohibernateinheritance.domain.Coordinatore;
 
 public class AccountDiCoordinatoreDTO extends AccountDiPersonaDTO {
 
@@ -21,4 +20,5 @@ public class AccountDiCoordinatoreDTO extends AccountDiPersonaDTO {
     public void setRuolo(String ruolo) {
         this.ruolo = ruolo;
     }
+
 }

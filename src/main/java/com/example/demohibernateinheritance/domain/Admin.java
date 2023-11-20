@@ -1,5 +1,7 @@
 package com.example.demohibernateinheritance.domain;
 
+import com.example.demohibernateinheritance.dto.AccountDiAdminDTO;
+import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -17,5 +19,29 @@ public class Admin extends Persona {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public AccountDiAdminDTO toDto(Admin admin) {
+
+        AccountDiAdminDTO accountDiAdminDTO = new AccountDiAdminDTO();
+        accountDiAdminDTO.setEmail(admin.getEmail());
+        accountDiAdminDTO.setNome(admin.getNome());
+        accountDiAdminDTO.setCognome(admin.getCognome());
+        accountDiAdminDTO.setSesso(admin.getSesso());
+
+        return accountDiAdminDTO;
+    }
+
+    @Override
+    public AccountDiAdminDTO getDTOofPersona() {
+
+        AccountDiAdminDTO accountDiAdminDTO = new AccountDiAdminDTO();
+
+        accountDiAdminDTO.setNome(this.getNome());
+        accountDiAdminDTO.setCognome(this.getCognome());
+        accountDiAdminDTO.setSesso(this.getSesso());
+        accountDiAdminDTO.setEmail(this.getEmail());
+
+        return accountDiAdminDTO;
     }
 }

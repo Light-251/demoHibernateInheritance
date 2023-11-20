@@ -13,10 +13,19 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 //@JsonDeserialize(using = AccountDiPersonaDTODeserializer.class)
 public class AccountDiPersonaDTO {
 
+    private Integer idAccount;
     private Integer idPersona;
     private String nome;
     private String cognome;
     private String sesso;
+
+    public Integer getIdAccount() {
+        return idAccount;
+    }
+
+    public void setIdAccount(Integer idAccount) {
+        this.idAccount = idAccount;
+    }
 
     public Integer getIdPersona() {
         return idPersona;
