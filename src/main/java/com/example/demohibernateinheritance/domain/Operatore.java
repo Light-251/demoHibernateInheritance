@@ -27,7 +27,7 @@ public class Operatore extends Persona {
 
         AccountDiOperatoreDTO accountDiOperatoreDTO = new AccountDiOperatoreDTO();
 
-        accountDiOperatoreDTO.setTypeName("Operatore");
+//        accountDiOperatoreDTO.setTypeName("Operatore");
         accountDiOperatoreDTO.setIdPersona(this.getId());
         accountDiOperatoreDTO.setNome(this.getNome());
         accountDiOperatoreDTO.setCognome(this.getCognome());

@@ -24,8 +24,8 @@ public class AccountDiPersonaDTO {
     private String cognome;
     private String sesso;
 
-    @JsonProperty("type")
-    private String typeName;
+//    @JsonProperty("type")
+//    private String typeName;
 
     public Integer getIdAccount() {
         return idAccount;
@@ -67,14 +67,14 @@ public class AccountDiPersonaDTO {
         this.sesso = sesso;
     }
 
-    public String getTypeName() {
-        return typeName;
-    }
-
-    @JsonSetter("type")
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
-    }
+//    public String getTypeName() {
+//        return typeName;
+//    }
+//
+//    @JsonSetter("type")
+//    public void setTypeName(String typeName) {
+//        this.typeName = typeName;
+//    }
 
     public Persona toObject() {
         return null;

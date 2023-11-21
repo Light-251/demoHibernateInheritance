@@ -36,7 +36,7 @@ public class Admin extends Persona {
 
         AccountDiAdminDTO accountDiAdminDTO = new AccountDiAdminDTO();
 
-        accountDiAdminDTO.setTypeName("Admin");
+//        accountDiAdminDTO.setTypeName("Admin");
         accountDiAdminDTO.setIdPersona(this.getId());
         accountDiAdminDTO.setNome(this.getNome());
         accountDiAdminDTO.setCognome(this.getCognome());

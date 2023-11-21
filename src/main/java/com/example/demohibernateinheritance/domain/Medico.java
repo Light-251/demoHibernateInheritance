@@ -51,7 +51,7 @@ public class Medico extends Persona {
 
         AccountDiMedicoDTO accountDiMedicoDTO = new AccountDiMedicoDTO();
 
-        accountDiMedicoDTO.setTypeName("Medico");
+//        accountDiMedicoDTO.setTypeName("Medico");
         accountDiMedicoDTO.setIdPersona(this.getId());
         accountDiMedicoDTO.setNome(this.getNome());
         accountDiMedicoDTO.setCognome(this.getCognome());

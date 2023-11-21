@@ -25,7 +25,7 @@ public class Coordinatore extends Persona {
 
         AccountDiCoordinatoreDTO accountDiCoordinatoreDTO = new AccountDiCoordinatoreDTO();
 
-        accountDiCoordinatoreDTO.setTypeName("Coordinatore");
+//        accountDiCoordinatoreDTO.setTypeName("Coordinatore");
         accountDiCoordinatoreDTO.setIdPersona(this.getId());
         accountDiCoordinatoreDTO.setNome(this.getNome());
         accountDiCoordinatoreDTO.setCognome(this.getCognome());
