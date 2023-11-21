@@ -1,7 +1,6 @@
 package com.example.demohibernateinheritance.domain;
 
 import com.example.demohibernateinheritance.dto.AccountDiAdminDTO;
-import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -37,6 +36,8 @@ public class Admin extends Persona {
 
         AccountDiAdminDTO accountDiAdminDTO = new AccountDiAdminDTO();
 
+        accountDiAdminDTO.setTypeName("Admin");
+        accountDiAdminDTO.setIdPersona(this.getId());
         accountDiAdminDTO.setNome(this.getNome());
         accountDiAdminDTO.setCognome(this.getCognome());
         accountDiAdminDTO.setSesso(this.getSesso());

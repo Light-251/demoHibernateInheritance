@@ -1,14 +1,11 @@
 package com.example.demohibernateinheritance.service;
 
 import com.example.demohibernateinheritance.domain.Account;
-import com.example.demohibernateinheritance.domain.Persona;
 import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
 import com.example.demohibernateinheritance.repository.AccountRepository;
-import com.example.demohibernateinheritance.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +14,6 @@ public class AccountService {
 
     @Autowired
     private AccountRepository accountRepository;
-    @Autowired
-    private PersonaRepository personaRepository;
 
     public List<AccountDiPersonaDTO> getAllAccounts() {
 
@@ -29,13 +24,15 @@ public class AccountService {
         return accountDiPersonaDTOS;
     }
 
-    public Boolean addAccount(Persona persona) {
+    public Boolean addAccount(AccountDiPersonaDTO accountDTO) {
 
         try {
 
-            personaRepository.save(persona);
+            Account account = new Account();
+            account.setPersona(accountDTO.toObject());
 
-//            accountRepository.save(account);
+            accountRepository.save(account);
+
             return true;
         } catch (Exception e) {
             return false;

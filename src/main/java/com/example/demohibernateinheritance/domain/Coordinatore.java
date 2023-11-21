@@ -1,7 +1,6 @@
 package com.example.demohibernateinheritance.domain;
 
 import com.example.demohibernateinheritance.dto.AccountDiCoordinatoreDTO;
-import com.example.demohibernateinheritance.dto.AccountDiPersonaDTO;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -26,6 +25,8 @@ public class Coordinatore extends Persona {
 
         AccountDiCoordinatoreDTO accountDiCoordinatoreDTO = new AccountDiCoordinatoreDTO();
 
+        accountDiCoordinatoreDTO.setTypeName("Coordinatore");
+        accountDiCoordinatoreDTO.setIdPersona(this.getId());
         accountDiCoordinatoreDTO.setNome(this.getNome());
         accountDiCoordinatoreDTO.setCognome(this.getCognome());
         accountDiCoordinatoreDTO.setSesso(this.getSesso());
